@@ -1,18 +1,3 @@
-/*#include<string>
-
-using namespace std;
-
-void main()
-{
-string prova;
-cin >> prova;
-cout << prova;
-}
- * 
- * 
- * 
- */
-
 #include <iostream>
 using namespace std;
 int main()
