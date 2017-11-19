@@ -13,14 +13,14 @@ int main()
 	cout << "Cappuccetto rosso sta camminando nel bosco ma ad un certo punto"<<endl;
 	cout<<"il lupo le ruba delle focaccine, quante ne ruba? ";
 	cin >> focaccout; //fine input
-	
+
 	//storia
 	cout << endl<<"C'era una ";
 	if ((oggi-nata_cr)<=12)
 		cout <<"bambina";
 	else if ((oggi-nata_cr)<=20)
 		cout <<"ragazza";
-	else 
+	else
 		cout <<"donna";
 	cout << " di nome Cappuccetto Rosso"<<endl<< "che si recava dalla sua nonnina al di là del bosco"<<endl;
 	cout << "per portarle "<<focaccin<<" focaccine calde calde."<<endl;
