@@ -10,8 +10,8 @@ int main()
 	{
 		for(int y=1; y<=n; y++)
 		{
-			cout.width(3);
-			cout << y*i << " ";
+			cout.width(4);
+			cout << y*i;
 		}
 		cout << endl;
 	}
