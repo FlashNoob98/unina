@@ -16,10 +16,10 @@ double input_numero(){
 			error=1;
 			}
 		catch(const invalid_argument) {
-			if(a[0]=='q'){
+			if((a[0]=='q')||(a[0]=='Q')){
 				exit(0);
 				}
-	  	cerr << "Devi inserire un numero: " << '\n';
+	  	cerr << "Devi inserire un numero: ";
 			}
 		} while(error==0);
 		return n;
@@ -27,14 +27,19 @@ double input_numero(){
 
 int main(){
 	cout << "Inserisci i valori o q per uscire"<<endl;
-	double r,s;
-	do{
+	double r,s,risultato;
+	while(true){
 		cout << "Inserisci il primo numero: ";
 		r = input_numero();
 		cout <<"Inserisci il secondo: ";
 		s = input_numero();
-		cout << r<<" "<<s<<endl;
+		if(abs(log10(r/s))<1){
+			cout << "Valore non accettabile, nullo."<<endl<<endl;
 		}
-	while(true);
-
-	return 0;}
+		else{
+			risultato=(pow((abs(r*s)),0.5))*100;	//media geometrica ecc
+			cout << "Il risultato è: "<<risultato<<endl<<endl;
+		}
+	}
+	return 0;
+}
