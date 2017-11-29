@@ -16,6 +16,9 @@ double input_numero(){
 			error=1;
 			}
 		catch(const invalid_argument) {
+			if(a[0]=='q'){
+				exit(0);
+				}
 	  	cerr << "Devi inserire un numero: " << '\n';
 			}
 		} while(error==0);
@@ -23,7 +26,7 @@ double input_numero(){
 }
 
 int main(){
-
+	cout << "Inserisci i valori o q per uscire"<<endl;
 	double r,s;
 	do{
 		cout << "Inserisci il primo numero: ";
