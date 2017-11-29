@@ -4,24 +4,34 @@
 #include <string>
 
 using namespace std;
+
+double input_numero(){
+		string a;
+		double n;
+		bool error=0;
+		do{
+		try{
+			getline(cin,a);
+			n = stod(a);
+			error=1;
+			}
+		catch(const invalid_argument) {
+	  	cerr << "Devi inserire un numero: " << '\n';
+			}
+		} while(error==0);
+		return n;
+}
+
 int main(){
-	string a,b;
+
 	double r,s;
 	do{
 		cout << "Inserisci il primo numero: ";
-		getline(cin,a);
+		r = input_numero();
 		cout <<"Inserisci il secondo: ";
-		getline(cin,b);
+		s = input_numero();
+		cout << r<<" "<<s<<endl;
+		}
+	while(true);
 
-		try{
-			r = stod(a);}
-		catch{}
-
-		s = stod(b);
-		cout << r<<" "<<s<<endl;}
-	while((a!="q")&&(b!="q"));
-		//
-
-
-	return 0;
-	}
+	return 0;}
