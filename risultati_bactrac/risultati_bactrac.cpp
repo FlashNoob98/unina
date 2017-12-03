@@ -38,7 +38,7 @@ int main(){
 		}
 		else{
 			risultato=(pow((abs(r*s)),0.5))*100;	//media geometrica ecc
-			cout << "Il risultato è: "<<risultato<<endl<<endl;
+			cout << "Il risultato e': "<<risultato<<endl<<endl;
 		}
 	}
 	return 0;
