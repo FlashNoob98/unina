@@ -1,3 +1,2 @@
-#Unina
-
-Esercitazioni elementi di informatica C++
+# unina
+Esercitazioni per l'esame di elementi di informatica
