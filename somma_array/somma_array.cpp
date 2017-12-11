@@ -1,6 +1,6 @@
 #include <iostream>
-#define r 3;
-#define c 4;
+#define r 3; //righe
+#define c 4; //colonne
 using namespace std;
 int main()
 {
