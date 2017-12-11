@@ -58,7 +58,8 @@ int main(){
 		else{
 			risultato=(pow((abs(r*s)),0.5))*100;	//media geometrica ecc
 			cout << "Il risultato e': "<<risultato<<endl<<endl;
-			print_res(r,s,std::to_string(risultato)); //stampa su file risultato
+			if (risultato==0) print_res(r,s,"0");
+			else print_res(r,s,std::to_string(risultato)); //stampa su file risultato
 		}		
 		
 	}
