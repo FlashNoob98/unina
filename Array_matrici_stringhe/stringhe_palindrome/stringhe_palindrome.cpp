@@ -27,6 +27,7 @@ int main()
 		cout << c[i]<<" ";
 		else pal=1;
 	}
+	
 	cout <<endl<<endl;
 	if (pal==0)
 	cout <<"La stringa e' palindroma!";
