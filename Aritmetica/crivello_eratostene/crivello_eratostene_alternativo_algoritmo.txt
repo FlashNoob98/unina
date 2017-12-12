@@ -1,0 +1,6 @@
+0 1 2 3 4 5 6 7 8 9 10 11 12	n=13
+
+ciclo 1: i=1 (1 deve valere 2 quindi i+1) < 13 i++
+	ciclo 2: j=i+1 (inizia da 3) j++
+		se j%(i+1)==0 allora il numero è divisibile
+			X[j]=true
