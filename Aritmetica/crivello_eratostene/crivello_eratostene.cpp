@@ -23,7 +23,7 @@ int main()
 		if (!(j%10))
 			cout <<endl;
 	}
-	
+	cout << endl;
 	return 0;
 }
 
