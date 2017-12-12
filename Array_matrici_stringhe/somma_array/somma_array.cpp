@@ -1,11 +1,9 @@
 #include <iostream>
-#define r 3; //righe
-#define c 4; //colonne
+#define r 3 //righe
+#define c 4 //colonne
 using namespace std;
 int main()
 {
-	//int righe=r;
-	//int colonne=c;
 	int m[r][c]={0};
 	
 	for (int i=0; i<r-1; i++){			//input
