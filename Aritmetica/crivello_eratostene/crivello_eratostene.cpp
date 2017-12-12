@@ -12,8 +12,8 @@ int main()
 		for(int j=2*i;j<=n;j+=i){
 				set[j] = true;
 		}
-		
 	}
+	
 	for (int j=1;j<n;j++){
 		if (!set[j]){
 			cout.width(6);
@@ -22,6 +22,7 @@ int main()
 		if (!(j%10))
 			cout <<endl;
 	}
+	
 	return 0;
 }
 
