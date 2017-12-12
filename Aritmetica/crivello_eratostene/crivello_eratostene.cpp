@@ -6,6 +6,7 @@ int main()
 	cout << "Inserisci dimensione array: ";
 	cin >> n;
 	bool set[n+1]={0};
+	
 	for (int i = 2;i<=n;i++){
 		if (set[i])
 			continue;
