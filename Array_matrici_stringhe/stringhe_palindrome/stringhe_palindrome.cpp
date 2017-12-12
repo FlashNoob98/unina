@@ -16,7 +16,7 @@ int main()
 		d[k-i-1] = c[i]; //copia inversa in stringa d
 	}
 	
-	cout <<endl<< "Stringa al contrario:"<<endl;
+	cout <<endl<< "Stringa al contrario:"<<endl;	//qui è possibile stampare senza ciclo for
 	for (int i=0; i<k;i++){
 		cout << d[i]<<" ";
 	}
@@ -24,13 +24,13 @@ int main()
 	cout <<endl<<endl<<"Ecco gli elementi uguali in posizione uguale: "<<endl;
 	for (int i=0; i<k;i++){
 		if (d[i]==c[i])
-		cout << c[i]<<" ";
+			cout << c[i]<<" ";
 		else pal=1;
 	}
 	
 	cout <<endl<<endl;
 	if (pal==0)
-	cout <<"La stringa e' palindroma!";
+		cout <<"La stringa e' palindroma!";
 	else cout <<"La stringa non e' palindroma!";
 	
 	return 0;
