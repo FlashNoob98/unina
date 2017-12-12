@@ -16,9 +16,11 @@ int main()
 	}
 	for (int j=1;j<n;j++){
 		if (!set[j]){
-			cout.width(4);
+			cout.width(6);
 			cout << j;
 		}
+		if (!(j%10))
+			cout <<endl;
 	}
 	return 0;
 }
