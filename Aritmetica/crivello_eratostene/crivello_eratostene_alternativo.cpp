@@ -25,14 +25,6 @@ int main()
 
 	}
 
-	/*for (int j=2;j<n;j++){ //output
-		if (!set[j]){
-			cout.width(6);
-			cout << j;
-		}
-		if (!(j%10))
-			cout <<endl;
-	}*/
 	cout <<endl;
 
 	return 0;
