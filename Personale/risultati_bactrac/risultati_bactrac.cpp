@@ -25,7 +25,7 @@ double input_numero(){
 		return n;
 }
 
-int print_res(double a,double b, string res){
+void print_res(double a,double b, string res){
 	//debug cout <<a<<" + "<<b<<" = "<<res<<endl;
 	ofstream file ("Risultati.txt",ofstream::app);
   if (file.is_open())
@@ -40,7 +40,7 @@ int print_res(double a,double b, string res){
   }
   else cout <<endl<< "Impossibile aprire il file";
   
-	return 0;
+	return;
 	}
 
 int main(){
