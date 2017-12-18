@@ -18,10 +18,26 @@ int main()
 		cout << "Inserisci elemento "<<i<<" ";
 		cin >> m[i][0];
 	}
-	
+	cout << "Matrice prodotto: "<<endl;
 	for(int i=1;i<r;i++){
 		for(int j=1;j<r;j++){
 			m[i][j]=m[0][j]*m[i][0];
+		}
+	}
+	
+	cout <<endl;
+	for (int i=0;i<r;i++){
+		for(int j=0;j<r;j++){
+			cout.width(4);
+			cout << m[i][j];
+		}
+		cout <<endl;
+	}
+	
+	cout <<endl<<"Matrice somma: "<<endl;
+	for(int i=1;i<r;i++){
+		for(int j=1;j<r;j++){
+			m[i][j]=m[0][j]+m[i][0];
 		}
 	}
 	cout <<endl;
