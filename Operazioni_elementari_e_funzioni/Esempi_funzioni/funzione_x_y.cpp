@@ -11,7 +11,7 @@ int main (){
 
 	for (float x=startx; x<=endx;x+=stepx){
 		for (float y=starty+stepy; y<=endy;y+=stepy){
-			cout << "f("<<x<<","<<y<<") = "<<f2(x,y)<<endl;
+			cout << "f("<<x<<";"<<y<<") = "<<f2(x,y)<<endl;
 
 		}
 	}
