@@ -33,7 +33,6 @@ double calcola_polinomio(float P[],int n,float x){
 	}
 /*
 void stampa_zeri(float P[],int n){
-	
 }*/
 
 
