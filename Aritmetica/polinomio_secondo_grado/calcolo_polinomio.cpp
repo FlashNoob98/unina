@@ -25,4 +25,3 @@ int main()
 	cout << "Il polinomio nel punto vale: "<<poly2eval(c,v)<<endl;
 	return 0;
 }
-
