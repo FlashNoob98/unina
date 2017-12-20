@@ -9,7 +9,7 @@ void riempi_polinomio(int P[], int n){
     cout << "Inserisci il coefficiente di X^"<<n-i <<": ";
     cin >> P[i];
   }
-	cout << "Inserisci il termine noto: ";
+  cout << "Inserisci il termine noto: ";
   cin >> P[n];
   return;
 }
@@ -20,11 +20,12 @@ void stampa_polinomio(int P[],int n){ //TODO: se il termine noto è 0 resta stam
 	else if(i==(n-1)&&P[i]==1)cout << "x + ";
 	else if (i==(n-1))cout<<P[i] << "x + ";
 	else if (P[i]==1&&i<n)cout << "x^"<<n-i<<" + ";
-  else if(i<n)cout<<P[i] << "x^"<<n-i<<" + ";
-  else if (i==n)cout<<P[i];
+	else if(i<n)cout<<P[i] << "x^"<<n-i<<" + ";
+	else if (i==n)cout<<P[i];
   }
   cout <<endl;
 }
+
 double calcola_polinomio(int P[],int n,float x){
 	double res=0;
 	for (int i=0;i<=n;i++){
@@ -34,6 +35,7 @@ double calcola_polinomio(int P[],int n,float x){
 }
 
 void trova_divisori(int P[],int n,vector<float> divisori){
+  float divisori_trovati=false;
   vector<int> numeratore;
   vector<int> denominatore;
 
@@ -52,12 +54,15 @@ void trova_divisori(int P[],int n,vector<float> divisori){
 
   for (int i = 0; i < int(numeratore.size()); i++){
     for (int j = 0; j < int(denominatore.size()); j++){
-      if (calcola_polinomio(P,n,float(numeratore[i])/denominatore[j])==0) {
+      if (calcola_polinomio(P,n,float(numeratore[i])/denominatore[j])==0) { //verifico che il valore sia 0 per ogni rapporto num/den
       divisori.push_back(float(numeratore[i])/denominatore[j]);
       cout << float(numeratore[i])/denominatore[j]<<endl;
+      divisori_trovati=true;
       }
     }
   }
+  if(!divisori_trovati) cout <<"Nessuno :("<<endl;
+  
   return;
 }
 
@@ -78,6 +83,6 @@ void trova_divisori(int P[],int n,vector<float> divisori){
    r = calcola_polinomio(p,n,x);	//calcolo valore in x
    cout << "Risultato: "<<r<<endl;
    cout <<"Zeri trovati: "<<endl;
-   trova_divisori(p,n,divisori);
+   trova_divisori(p,n,divisori); //stampa zeri del polinomio se ce ne sono altrimenti stampa 0
    return 0;
  }
