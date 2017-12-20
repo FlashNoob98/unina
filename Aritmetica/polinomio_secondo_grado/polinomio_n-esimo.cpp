@@ -31,46 +31,35 @@ double calcola_polinomio(int P[],int n,float x){
 		res+=(pow(x,n-i)*P[i]);
 	}
 	return res;
-	}
+}
 
 void trova_divisori(int P[],int n,vector<float> divisori){
   vector<int> numeratore;
   vector<int> denominatore;
 
-  for (int i = 1; i <= P[n]; i++) { //divisori termine noto
+  for (int i = 1; i <= abs(P[n]); i++) { //divisori termine noto
     if ((P[n]%i)==0) {
       numeratore.push_back(i);
-      //numeratore.push_back(-i);
-      //cout <<i<<endl;
     }
   }
-  cout <<endl; //debug
-  for (int i = 1; i <= P[0]; i++) { //divisori coefficiente di grado massimo
+
+  for (int i = 1; i <= abs(P[0]); i++) { //divisori coefficiente di grado massimo
     if ((P[0]%i)==0) {
       denominatore.push_back(i);
       denominatore.push_back(-i);
-      //cout <<i<<endl;
     }
   }
-  //cout<<endl;
+
   for (int i = 0; i < int(numeratore.size()); i++){
     for (int j = 0; j < int(denominatore.size()); j++){
-      //if (denominatore[j]!=0&&numeratore[i]!=0) {
-      divisori.push_back(numeratore[i]/denominatore[j]);
-      //cout << numeratore[i]<<" "<<denominatore[j] << '\n'; //debug
-      //}
+      if (calcola_polinomio(P,n,float(numeratore[i])/denominatore[j])==0) {
+      divisori.push_back(float(numeratore[i])/denominatore[j]);
+      cout << float(numeratore[i])/denominatore[j]<<endl;
+      }
     }
   }
-  /*
-  for divisori ecc calcola_polinomio==0;
-  */
-
   return;
 }
-/*
-void stampa_zeri(float P[],int n){
-}*/
-
 
  int main() {
    int n;
@@ -88,7 +77,7 @@ void stampa_zeri(float P[],int n){
    cin >> x;
    r = calcola_polinomio(p,n,x);	//calcolo valore in x
    cout << "Risultato: "<<r<<endl;
+   cout <<"Zeri trovati: "<<endl;
    trova_divisori(p,n,divisori);
-   //cout <<"Il polinomio vale 0 per x uguale a: "<<stampa_zeri(p,n)<<endl;
    return 0;
  }
