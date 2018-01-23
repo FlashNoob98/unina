@@ -83,6 +83,6 @@ void trova_divisori(int P[],int n,vector<float> divisori){
    r = calcola_polinomio(p,n,x);	//calcolo valore in x
    cout << "Risultato: "<<r<<endl;
    cout <<"Zeri trovati: "<<endl;
-   trova_divisori(p,n,divisori); //stampa zeri del polinomio se ce ne sono altrimenti stampa 0
+   trova_divisori(p,n,divisori); //stampa zeri del polinomio se ce ne sono altrimenti stampa "nessuno"
    return 0;
  }
