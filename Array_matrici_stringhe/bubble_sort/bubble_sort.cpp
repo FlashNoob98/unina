@@ -7,7 +7,7 @@ void input_array(char input[dim_array]){
 	cout <<"Inserisci gli elementi nell'array, devono essere a, b o c"<<endl;
 	for (int i=0;i<dim_array;i++){
 		do{
-			cout << "Inserisci "<<i+1<<"° elemento: ";
+			cout << "Inserisci il "<<i+1<<"° elemento: ";
 			cin >> input[i];
 		}while(!((input[i]=='a')||(input[i]=='b')||(input[i]=='c')));
 	}
