@@ -36,5 +36,5 @@ int main(){
 	if(terra=='N'||terra=='n') cout <<" e accelerazione di "<<g<<" m/s^2"<<endl;
 	cout <<endl<<"Altezza massima: "<<setiosflags(ios::fixed) << setprecision(2)<<(0.5*pow(V0*sin(angolo*PI/180),2))/g<<" metri."<<endl;
 	cout <<"Tempo di caduta: "<<setiosflags(ios::fixed) << setprecision(2)<<(2*V0*sin(angolo*PI/180))/g<<" secondi."<<endl;
-	cout <<"Gittata:         "<<setiosflags(ios::fixed) << setprecision(2)<<roundf((2*pow(V0,2)*sin(angolo*PI/180)*cos(angolo*PI/180))/g)<<" metri."<<endl;
+	cout <<"Gittata:         "<<setiosflags(ios::fixed) << setprecision(2)<<(2*pow(V0,2)*sin(angolo*PI/180)*cos(angolo*PI/180))/g<<" metri."<<endl;
 	}
