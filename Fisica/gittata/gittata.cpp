@@ -5,8 +5,7 @@ using namespace std;
 #define PI 3.14159265
 
 int main(){
-	int angolo=0;
-	float V0=0,g=9.81;
+	float V0=0,g=9.81,angolo=0;
 	char terra='S';
 	cout<<"Calcolatore moto parabolico"<<endl;
 	cout << "Inserisci prima l'angolo"<<endl;
@@ -26,7 +25,7 @@ int main(){
 	cout <<"Ti trovi sulla terra? (S/N): ";	//modifica g se necessario
 	cin>>terra;
 	if (terra=='N'||terra=='n'){
-		cout << "Inserisci l'accelerazione di gravita'"<<endl;
+		cout << "Inserisci l'accelerazione di gravita' del pianeta"<<endl;
 		do{
 			cout << "Deve essere maggiore di 0: ";
 			cin >> g;
