@@ -26,14 +26,14 @@ int main(){
 	cout <<"Ti trovi sulla terra? (S/N): ";	//modifica g se necessario
 	cin>>terra;
 	if (terra=='N'||terra=='n'){
+		cout << "Inserisci l'accelerazione di gravita'"<<endl;
 		do{
-			cout << "Inserisci l'accelerazione di gravita': ";
 			cout << "Deve essere maggiore di 0: ";
 			cin >> g;
 		}while(!(g>0));
 	}
-	cout <<"Risultati con angolo di "<<angolo<<"° e velocita' di "<<V0<<" m/s "<<endl; //calcolo e output
-	if(terra=='N'||terra=='n') cout <<" e accelerazione di "<<g<<" m/s^2"<<endl;
+	cout <<endl<<"Risultati con angolo di "<<angolo<<"° e velocita' di "<<V0<<" m/s "<<endl; //calcolo e output
+	if(terra=='N'||terra=='n') cout <<"e accelerazione di "<<g<<" m*s^-2"<<endl;
 	cout <<endl<<"Altezza massima: "<<setiosflags(ios::fixed) << setprecision(2)<<(0.5*pow(V0*sin(angolo*PI/180),2))/g<<" metri."<<endl;
 	cout <<"Tempo di caduta: "<<setiosflags(ios::fixed) << setprecision(2)<<(2*V0*sin(angolo*PI/180))/g<<" secondi."<<endl;
 	cout <<"Gittata:         "<<setiosflags(ios::fixed) << setprecision(2)<<(2*pow(V0,2)*sin(angolo*PI/180)*cos(angolo*PI/180))/g<<" metri."<<endl;
