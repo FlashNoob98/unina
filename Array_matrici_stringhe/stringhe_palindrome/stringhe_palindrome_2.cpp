@@ -51,7 +51,7 @@ int main(){
 			}
 		else pal=0;
 	}
-	if(none) cout <<"Nessuno!";
+	if(none) cout <<endl<<"Nessuno!";
 	cout <<endl;
 	for (int i=0; i<lunghezza ;i++){
 		if(count[i]!=0){
