@@ -4,15 +4,15 @@ using namespace std;
 int main (){
 	float operand=1, partial;
 	char operazione;
-	cout<< "benvenuto nella calcolatrice elementare "<< endl;
-	cout<< "inserisci '0' per terminare "<< endl;
-	cout<< "inserisci un numero: ";
+	cout<< "Benvenuto nella calcolatrice elementare"<< endl;
+	cout<< "Inserisci '0' per terminare"<< endl;
+	cout<< "Inserisci numero: ";
 	cin>> partial;
 	while (operand!=0){
-		cout<< "inserisci operazione (+,-,*,/): ";
+		cout<< "Inserisci operazione (+,-,*,/): ";
 		cin>> operazione;
 		if (operazione == '0') break;
-		cout << "Inerisci numero: ";
+		cout << "Inserisci numero: ";
 		cin >> operand;
 		switch (operazione){
 			case '+': partial=partial+operand;break;
