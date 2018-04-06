@@ -1,4 +1,4 @@
-// calcolatrice.cpp
+/* calcolatrice.cpp */
 #include <iostream>
 using namespace std;
 int main (){
