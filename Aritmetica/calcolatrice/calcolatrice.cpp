@@ -1,4 +1,4 @@
-// calcolatrice. cpp
+// calcolatrice.cpp
 #include <iostream>
 using namespace std;
 int main (){
@@ -12,7 +12,7 @@ int main (){
 		cout<< "Inserisci operazione (+,-,*,/,c): ";
 		cin>> operazione;
 		if (operazione == 'c'){
-			partial =0;
+			partial = 0;
 			cout <<"Parziale: "<<partial<<endl;
 			continue;
 		}
@@ -25,12 +25,12 @@ int main (){
 			case '-': partial=partial-operand;break;
 			case '*': partial=partial*operand;break;
 			case '/': partial=partial/operand;break;
-			//case 'c': partial=0;break;
 		}
 		cout<<"Parziale: "<<partial<<endl;
 	}
 	
 	cout << "Programma terminato, risultato: "<<partial<<endl;
+	system("PAUSE");
 	return 0;
 }
 
