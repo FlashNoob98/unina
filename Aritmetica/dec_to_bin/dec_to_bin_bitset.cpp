@@ -6,7 +6,11 @@ int main(){
 	cout << "Inserisci il numero fino al quale eseguire la conversione in binario: ";
 	cin >>n; 
     for (int i = 0; i<=n; i++){
-		cout <<i<<" "<< bitset<64>(i)<<endl;
+		if (i<256) 				cout <<i<<" "<< bitset<8>(i)<<endl;
+		else if (i<65536)		cout <<i<<" "<< bitset<16>(i)<<endl;
+		else if (i<16777216)	cout <<i<<" "<< bitset<24>(i)<<endl;
+		else if (i<4294967296)  cout <<i<<" "<< bitset<32>(i)<<endl;
+		else 					cout <<i<<" "<< bitset<64>(i)<<endl;
     }
    return 0;
 }
