@@ -14,6 +14,6 @@ int main(){
 			p++;
 		}
 	}
-	cout << "La media dei numeri pari inseriti e': "<< (float)(somma/p)<<endl;
+	cout << "La media dei numeri pari inseriti e': "<< ((float)somma)/p<<endl;
 	return 0;
 	}
