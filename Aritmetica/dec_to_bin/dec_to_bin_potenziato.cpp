@@ -13,9 +13,7 @@ int main(){
 		bit = log2(num)+1;
 		bool bin[bit]={0};
 		for (int i=0; i<bit;i++){
-			if (num%2!=0){
-				bin[bit-i-1]=1;
-			}
+			if (num%2!=0) bin[bit-i-1]=1;
 			num = num/2;
 		}
 		cout << "Numero in binario: ";
