@@ -1,4 +1,4 @@
-/* Media algebrica di n numeri fino all'inserimento di -100 */
+/* Media algebrica di n numeri fino all'inserimento di 100 */
 #include <iostream>
 using namespace std;
 int main(){
