@@ -31,3 +31,8 @@
 *.out
 *.app
 
+*.opendb
+*.suo
+*.db
+*.sqlite
+*.json
