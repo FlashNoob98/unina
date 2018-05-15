@@ -26,7 +26,7 @@ int main(int argc, char** argv) {
 	
 	for (i=0;i<n;i++)
 	{
-	cout<<" nome"<<i<<": ";
+	cout<<" nome "<<i+1<<": ";
 	cin>>iscritto[i].nome;
 	cout<<" pettorale: ";
 	cin>>iscritto[i].numero;
@@ -43,7 +43,7 @@ int main(int argc, char** argv) {
      	duratatotale[i]=iscritto[i].durata.h*3600+iscritto[i].durata.min*60+iscritto[i].durata.sec;
 	}
 	for (i=0;i<n;i++) {
-	    cout<<" il tempo impiegato dall'atleta con il numero "<<iscritto[i].numero<<" e' "<<duratatotale[i]<<" secondi";		
+	    cout<<" il tempo impiegato dall'atleta con il numero "<<iscritto[i].numero<<" e' "<<duratatotale[i]<<" secondi"<<endl;		
 	}
 	
 	cout<<endl;
