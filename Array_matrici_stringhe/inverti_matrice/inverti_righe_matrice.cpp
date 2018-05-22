@@ -61,7 +61,7 @@ void scambia_righe(int A[][DIM], int n,int m){
 }
 
 void scambia_colonne(int A[][DIM], int n,int m){
-	int a,b,buff[m];
+	int a,b,buff[n];
 	if (m!=2){
 		do{
 			cout << "Inserisci la prima colonna da scambiare: ";
