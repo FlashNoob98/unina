@@ -36,7 +36,7 @@ void stampa_trasposta(int A[][DIM], int n, int m){
 	}
 
 void scambia_righe(int A[][DIM], int n,int m){
-	int a,b,buff[m];
+	int a,b,buff;
 	if(n!=2){
 		do{
 			cout << "Inserisci la prima riga da scambiare: ";
@@ -53,15 +53,15 @@ void scambia_righe(int A[][DIM], int n,int m){
 	}
 	else{a=1;b=2;}
 	for (int j=0; j<m;j++){
-		buff[j]=A[a-1][j];
+		buff=A[a-1][j];
 		A[a-1][j]=A[b-1][j];
-		A[b-1][j]=buff[j];
+		A[b-1][j]=buff;
 	}
 
 }
 
 void scambia_colonne(int A[][DIM], int n,int m){
-	int a,b,buff[n];
+	int a,b,buff;
 	if (m!=2){
 		do{
 			cout << "Inserisci la prima colonna da scambiare: ";
@@ -78,9 +78,9 @@ void scambia_colonne(int A[][DIM], int n,int m){
 	}
 	else {a=1;b=2;}
 	for (int i=0; i<n;i++){
-		buff[i]=A[i][a-1];
+		buff=A[i][a-1];
 		A[i][a-1]=A[i][b-1];
-		A[i][b-1]=buff[i];
+		A[i][b-1]=buff;
 	}
 	}
 
