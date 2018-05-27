@@ -36,6 +36,7 @@ int main (){
 		stampa(BA,br,ac);
 	}
 	if (ac!=br&&bc!=ar) cout<<endl<< "Non posso eseguire il prodotto"<<endl;
+	cout<<endl;
 	return 0;
 }
 
