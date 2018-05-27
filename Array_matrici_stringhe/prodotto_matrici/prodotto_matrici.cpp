@@ -1,6 +1,6 @@
 #include <iostream>
 #define DIM 20	//dimensione allocata
-#define lar 3	//larghezza matrice
+#define lar 5	//larghezza matrice
 using namespace std;
 
 int A[DIM][DIM], B[DIM][DIM], AB[DIM][DIM], BA[DIM][DIM];
@@ -24,18 +24,18 @@ int main (){
 	stampa(B,br,bc);
 	
 	if (ac==br){
-		cout<<"Prodotto AxB"<<endl;
+		cout<<endl<<"Prodotto AxB";
 		prodotto(A,B,AB,ar,bc);
 		cout<<endl;
 		stampa(AB,ar,bc);
 	}
 	if (bc==ar){
-		cout<<"Prodotto BxA"<<endl;
-		prodotto(A,B,BA,br,ac);
+		cout<<endl<<"Prodotto BxA";
+		prodotto(B,A,BA,br,ac);
 		cout<<endl;
 		stampa(BA,br,ac);
 	}
-	if (ac!=br&&bc!=ar) cout<< "non posso eseguire il prodotto"<<endl;
+	if (ac!=br&&bc!=ar) cout<<endl<< "Non posso eseguire il prodotto"<<endl;
 	return 0;
 }
 
