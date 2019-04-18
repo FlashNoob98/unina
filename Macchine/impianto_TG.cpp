@@ -66,27 +66,27 @@ void calcolo_P2(){
 
 void calcolo_mcomb(){ //calcolo portata combustibile
 	cout<<"Inserisci il potere calorifico inferiore (MJ/kg): ";
-	cin>>Hi; Hi=Hi*1000;
-	mdotc=power/(Eta_globale*Hi); //portata combustibile
+	cin>>Hi; Hi=Hi*1000; //trasformo in kJ
+	mdotc=power/(Eta_globale*Hi); //portata combustibile in kg/s
 	return;
 }
 
 void calc(){
 	double A,B;
-	Eta_pe=1.01;
-	cout<<T4<<" "<<T1<<endl;
+	Eta_pe=1;
+	//cout<<T4<<" "<<T1<<endl;
 	do{
-		T3=(T4+273)*pow(Beta,(lambda/Eta_pe));
-		Eta_pc=Eta_pe-0.01; //
-		Eta_pe=Eta_pe-0.01;
-		T2=(T1+273)*pow(Beta,(lambda/Eta_pc));
+		T3=(T4+273.15)*pow(Beta,(lambda/Eta_pe));
+		Eta_pc=Eta_pe-0.02; //rendimento politropico di espansione e compressione
+		Eta_pe=Eta_pe-0.001;
+		T2=(T1+273.15)*pow(Beta,(lambda/Eta_pc));
 		A=mdot*Cp*T2+mdotc*Hi;
 		B=(mdot+mdotc)*Cp*T3;
-		cout<<A<<" test "<<B<<"  "<<Eta_pc<<endl;
-		Eta_pc=Eta_pc-0.01;
+		cout<<A<<" test "<<B<<"  "<<Eta_pc<<" "<<Eta_pe+0.001<<endl;
+
 		
-	}while(abs(A-B)>=1);
-	cout<<"Eta_pe= "<<Eta_pe<<" \nEta_pc = "<<Eta_pc<<" \nT2 = "<<T2-273<<"\nT3 = "<<T3-273<<endl;
+	}while(abs(A-B)>=10);
+	cout<<"Eta_pe = "<<Eta_pe<<" \nEta_pc = "<<Eta_pc<<" \nT2 = "<<T2-273<<"\nT3 = "<<T3-273<<endl;
 	return;
 }
 
