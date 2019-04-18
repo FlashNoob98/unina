@@ -3,11 +3,13 @@
  * Scritto da Olivieri Daniele
  */
 #include <iostream>
+#include <cmath>
 using namespace std;
-float T2,T3,P2,P3,P4;  //Valori dell'acqua
+float T2,T3=0,P2,P3,P4;  //Valori dell'acqua
 float Beta,Eta_globale,mdot,power,T4; //Parametri impianto
 float T1=15,P1=1,k=1.4,mass=28.96,Cp=1.005; //atmosfera ISO
-float lambda;
+float lambda=(k-1)/k,Eta_pe,Eta_pc,Tmax=(1600+273);
+float Hi,mdotc; //potere calorifico e portata massica carburante
 
 
 void schema(){
@@ -46,7 +48,7 @@ void input(){
 		cout<<"Inserisci il Cp: ("<<Cp<<" kJ/(kg*K)): ";
 		cin>>Cp;
 	}
-	cout<<"Utilizzerò i seguenti valori: \nT1 = "<<T1<<"°C \nP1 = "<<P1<<" atm \nk = "<<k<<"  \nmassa = "<<mass<<" kg/kmol \nCp = "<<Cp<<" kJ/(kg*K)"<<endl;
+	cout<<"Utilizzerò i seguenti valori: \nT1 = "<<T1<<"°C \nP1 = "<<P1<<" atm \nk = "<<k<<"  \nmassa molare = "<<mass<<" kg/kmol \nCp = "<<Cp<<" kJ/(kg*K)"<<endl;
 	cout<<endl<<"Ora devi inserire tutti i parametri della macchina"<<endl; //Parametri impianto
 	cout<<"Potenza (kW): "; cin >> power;
 	cout<<"Efficienza (%): "; cin >> Eta_globale; Eta_globale=Eta_globale/100;
@@ -62,7 +64,43 @@ void calcolo_P2(){
 	return;
 }
 
+void calcolo_mcomb(){ //calcolo portata combustibile
+	cout<<"Inserisci il potere calorifico inferiore (MJ/kg): ";
+	cin>>Hi; Hi=Hi*1000;
+	mdotc=power/(Eta_globale*Hi); //portata combustibile
+	return;
+}
 
+void calc(){
+	double A,B;
+	Eta_pe=1.01;
+	cout<<T4<<" "<<T1<<endl;
+	do{
+		T3=(T4+273)*pow(Beta,(lambda/Eta_pe));
+		Eta_pc=Eta_pe-0.01; //
+		Eta_pe=Eta_pe-0.01;
+		T2=(T1+273)*pow(Beta,(lambda/Eta_pc));
+		A=mdot*Cp*T2+mdotc*Hi;
+		B=(mdot+mdotc)*Cp*T3;
+		cout<<A<<" test "<<B<<"  "<<Eta_pc<<endl;
+		Eta_pc=Eta_pc-0.01;
+		
+	}while(abs(A-B)>=1);
+	cout<<"Eta_pe= "<<Eta_pe<<" \nEta_pc = "<<Eta_pc<<" \nT2 = "<<T2-273<<"\nT3 = "<<T3-273<<endl;
+	return;
+}
+
+void calcolo_T3(){
+
+	do {
+		Eta_pe=Eta_pe+0.001;
+		T3=(T4+273)*pow(Beta,(lambda/Eta_pe));
+		
+		cout<<(T3-273)<<" °C"<<endl;
+	} while ((T3>=Tmax) && (Eta_pe<1));
+	cout<<Eta_pe<<endl;
+	return;
+}
 
 int main(){
 	schema();
@@ -70,6 +108,10 @@ int main(){
 	calcolo_P2();
 	//cout <<P2;
 	lambda=(k-1)/k;
-	
+	calcolo_mcomb();
+	cout<<mdotc<<" kg/s di combustibile"<<endl;
+	calc();
+	//calcolo_T3();
+	//cout<<T3<<endl;
 	return 0;
 }
