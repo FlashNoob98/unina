@@ -72,7 +72,7 @@ void stampa (int M[DIM][DIM], int n, int c){
 void prodotto (int M1[DIM][DIM], int M2[DIM][DIM], int M3[DIM][DIM], int r1, int c1){ //prodotto
 	for (int i=0; i<r1; i++){
 		for( int j=0; j<c1; j++){
-            M3[i][j]=0;
+			M3[i][j]=0;
 			for (int k=0; k<c1; k++){
 				M3[i][j] += M1[i][k]*M2[k][j];
 			}
